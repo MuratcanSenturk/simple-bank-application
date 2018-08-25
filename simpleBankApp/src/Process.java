@@ -6,18 +6,18 @@ public class Process {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("Bankaya hoşgeldiniz. Devam etmek için bir kullanıcı adı ve şifre alın.");
-		System.out.print("Kullanıcı adınız: ");
+		System.out.println("Wellcome to Bank. Get username and password for continue.");
+		System.out.print("Your new username: ");
 		String kullaniciadi = scan.nextLine();
-		System.out.print("Şifreniz: ");
+		System.out.print("Your new password: ");
 		int sifre = scan.nextInt();
 		scan.nextLine();
 		
 		Account new_account = new Account(1200, kullaniciadi, sifre);
 		
-		System.out.println("Bakiye: " + new_account.getBalance());
-		System.out.println("Kullanıcı adı: " + new_account.getUsername());
-		System.out.println("Şifre: " + new_account.getPassword());
+		System.out.println("Balance: " + new_account.getBalance());
+		System.out.println("Your username: " + new_account.getUsername());
+		System.out.println("Your password: " + new_account.getPassword());
 		
 		boolean bankProcess = true;
 	
@@ -32,12 +32,12 @@ public class Process {
 			if(new_account.getUsername().equals(username) && new_account.getPassword() == password) {
 				
 				System.out.println("******************************");
-				System.out.println("Bankaya Hoşgeldiniz");
-				System.out.println("Lütfen bir işlem seçin...");
-				System.out.println("1: Bakiye sorgulama.");
-				System.out.println("2: Para yatırma.");
-				System.out.println("3: Para çekme");
-				System.out.println("0: Çıkış");
+				System.out.println("WELLCOME TO THE BANK");
+				System.out.println("Please choose a process...");
+				System.out.println("1: Balance inquiry.");
+				System.out.println("2: Deposit.");
+				System.out.println("3: Money withdraw.");
+				System.out.println("0: Exit.");
 				System.out.println("******************************");
 				
 				bankProcess = false;
@@ -45,7 +45,7 @@ public class Process {
 				
 			}else {
 				
-				System.out.println("Kullanıcı adı yada şifre yanlış.");
+				System.out.println("Incorrect username or password.");
 				continue;
 				
 			}
@@ -63,24 +63,24 @@ public class Process {
 				
 			}
 			else if(process == 2) {
-				System.out.println("Yatıracağınız parayı girin: ");
+				System.out.println("Enter value of deposit: ");
 				
 				int deposit_value = scan.nextInt();
 				new_account.deposit(deposit_value);
 				
 			}else if(process == 3) {
-				System.out.println("Çekeceğiniz parayı girin: ");
+				System.out.println("Enter value of withdraw: ");
 				
 				int withdrawal_value = scan.nextInt();
 				new_account.withdrawal(withdrawal_value);
 				
 			}else if(process == 0) {
-				System.out.println("Bankadan çıkılıyor.");
+				System.out.println("Exiting from bank.");
 				break;
 				
 			}else {
 				
-				System.out.println("Lütfen geçerli bir işlem girin.");
+				System.out.println("Please enter a valid process.");
 				
 			}
 			
