@@ -18,9 +18,9 @@ public class Account {
 		
 		if(balance <= 0) {
 			
-			System.out.println("Bakiyeniz bulunmamaktadır.");
+			System.out.println("You have no balance.");
 		}else {
-		System.out.println("Güncel bakiyeniz " + balance + " türk lirası.");
+		System.out.println("Your balance is " + balance + " dollars.");
 		}
 		
 		
@@ -29,19 +29,19 @@ public class Account {
 	public void deposit(int deposit_value) {
 		
 		balance += deposit_value;
-		System.out.println("Yeni bakiyeniz: " + balance);
+		System.out.println("Your new balance: " + balance);
 		
 	}
 	public void withdrawal(int withdrawal_value) {
 		
 		if(withdrawal_value > balance) {
 			
-			System.out.println("Bu işlemi gerçekleştiremezsiniz.");
+			System.out.println("You can not perform that process.");
 			
 		}else {
 			
 			balance  -= withdrawal_value;
-			System.out.println("Yeni bakiyeniz: " + balance);
+			System.out.println("Your new balance: " + balance);
 			
 		}
 		
